@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-
-import { VscSettings } from "react-icons/vsc";
 import { useAnalyticsStore } from "@/store/useAnalyticsStore";
 const Analytics = () => {
   const startDate = useAnalyticsStore((s) => s.startDate);
@@ -65,12 +63,6 @@ const Analytics = () => {
             enter
           </button>
         </div>
-        <button className="my-3 flex text-blue-500 ">
-          <div className="mx-2">
-            <VscSettings color="blue" />
-          </div>
-          Settings
-        </button>
       </div>
     </>
   );
