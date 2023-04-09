@@ -1,11 +1,6 @@
 import { useAnalyticsStore, ImergedData } from "@/store/useAnalyticsStore";
 import { FaFilter } from "react-icons/fa";
-import React, {
-  MouseEventHandler,
-  useCallback,
-  useEffect,
-  useState,
-} from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
 
 type SortOrder = "ascn" | "desc";
 const AnalyticsTable = ({ appData }: any) => {
@@ -27,11 +22,7 @@ const AnalyticsTable = ({ appData }: any) => {
   }) {
     if (!tableData) return tableData;
     const sortedData = tableData.sort((a: any, b: any) => {
-      if (sortKey === "date") {
-        return new Date(a[sortKey]).getTime() - new Date(b[sortKey]).getTime();
-      } else {
-        return a[sortKey] > b[sortKey] ? 1 : -1;
-      }
+      return a[sortKey] > b[sortKey] ? 1 : -1;
     });
     if (reverse) {
       return sortedData.reverse();
